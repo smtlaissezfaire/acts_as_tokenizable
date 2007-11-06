@@ -3,7 +3,7 @@ ActsAsTokenizable
 
 Add a column named 'token' to your model, as a string:
 
-class AddIncompleteSignedUpUsers < ActiveRecord::Migration
+class AddTokenStringColumnToUsers < ActiveRecord::Migration
   def self.up
     add_column :users, :token, :string
   end

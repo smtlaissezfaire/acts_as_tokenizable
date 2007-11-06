@@ -1,0 +1,26 @@
+ActsAsTokenizable
+=================
+
+Add a column named 'token' to your model, as a string:
+
+class AddIncompleteSignedUpUsers < ActiveRecord::Migration
+  def self.up
+    add_column :users, :token, :string
+  end
+
+  def self.down
+    remove_column :users, :token
+  end
+end
+
+Then open up your class, and add the following:
+
+class User < ActiveRecord::Base
+  acts_as_tokenizable
+end
+
+Now when a user gets created, he will have a unique 16 character token:
+
+user = User.create!
+user.token # => "3737edeca0f85e76" 
+

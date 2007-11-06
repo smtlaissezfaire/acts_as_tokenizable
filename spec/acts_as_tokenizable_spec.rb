@@ -48,4 +48,16 @@ describe "A", TokenizableModel do
     @tokenizable_model.save!
     @tokenizable_model.token.size.should == 16
   end
+  
+  it "should be able to be refound via it's id (exploratory test)" do
+    @tokenizable_model.save!
+    id = @tokenizable_model.id
+    TokenizableModel.find(id).should == @tokenizable_model
+  end
+  
+  it "should still have the token, after it is refound by it's id" do
+    @tokenizable_model.save!
+    id = @tokenizable_model.id
+    TokenizableModel.find(id).token.should_not be_nil
+  end  
 end

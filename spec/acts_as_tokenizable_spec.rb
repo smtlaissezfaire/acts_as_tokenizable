@@ -1,21 +1,5 @@
 require File.dirname(__FILE__) + "/spec_helper"
 
-# belongs_to :user
-# before_validation_on_create :generate_hash!, :set_date
-# validates_associated :user
-# validates_presence_of :value, :created_at
-# 
-# def generate_hash!
-#   random_string = String.new
-#   16.times { |i| random_string << (Kernel.rand(93)+33) }
-#   self.value = Digest::MD5.hexdigest(random_string).to_s[0,16]
-# end
-# 
-# def set_date
-#   self.created_at = Time.now
-# end
-# 
-# 
 describe "A", TokenizableModel do
   before :each do
     @tokenizable_model = TokenizableModel.new

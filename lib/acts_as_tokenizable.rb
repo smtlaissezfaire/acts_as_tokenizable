@@ -1,3 +1,5 @@
+require 'digest'
+
 # ActsAsTokenizable
 module ActsAsTokenizable
   module ClassMethods
